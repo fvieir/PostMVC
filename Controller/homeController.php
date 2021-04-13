@@ -1,17 +1,12 @@
 <?php
 
-Class HomeController()
+Class HomeController
 {
-    public function CarregarTemplate()
-    {
-        
-    }
+    public function index(){
 
-    public function CarregarViewNoTemplate(){
-
+        echo "chamou o index";
 
     }
-
 }
 
 ?>
