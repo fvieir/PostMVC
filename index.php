@@ -2,16 +2,20 @@
 require_once "Core/Core.php";
 require_once "Controller/ErrorController.php";
 require_once "Controller/HomeController.php";
+require_once "Model/Conexao.php";
 
-$template = file_get_contents('View/template.html');
+$con = Conexao::getInstance();
+var_dump($con);
 
-ob_start(); // Conteudo a ser caputurado entre o bloco ob_start ate ob_clean()
-    $core = new Core();
-    $core->run($_GET);
-    $saida = ob_get_contents(); // Recupera o valor e jogar para dentro da variavel
-ob_clean();
-$tpPronto = str_replace('{{conteudo dinamico}}',$saida, $template);
+$template = file_get_contents('View/template.html'); // Variavel recebe todo o conteudo do html
 
-echo $tpPronto;
+ob_start(); // Inicia um buffer
+    $core = new Core(); // Instacia o objeto da classe Core
+    $core->run($_GET); // Chama o metodo run que é responsavel em chamar a classe e metodo corretos
+$saida = ob_get_clean(); // armazane em mémoria o resultado do trecho entre Ob_start e limpa o buffer
+
+$tppronto = str_replace('{{conteudo dinamico}}',$saida,$template); // Variavel recebe o template com o conteudo para listar
+
+echo $tppronto; // imprimi todo o codigo html com o conteudo dinâmico
 
 ?>

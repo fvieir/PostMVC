@@ -31,16 +31,18 @@ Class Core{
             $controller = 'HomeController';
             $metodo = 'index';
         }
- 
-         if(!class_exists($controller)){
-             $controller = 'ErrorController';
-         }
- 
-         $objeto = new $controller;
-         call_user_func_array(array($objeto, $metodo), array());
-         
-    }
+        
+        // Se não existir a classe chama a pagina de erro.
+        $caminho = 'Controller/'.$controller.'php';
 
+        if (!file_exists($caminho) && !class_exists($controller)) {
+
+            $controller = 'ErrorController';
+        }
+
+         $objeto = new $controller;
+         call_user_func_array(array($objeto, $metodo), array());    
+    }
 }
 
 ?>
