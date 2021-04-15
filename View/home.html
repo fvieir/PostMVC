@@ -1,26 +1,13 @@
 
     <section>
-        <article>
+        {% for parametros in post %}
+            <article>
             <header>
-                <a href ="#"><h1>Titulo da minha Postagem</h1></a>
+                <a href ="#"><h1>{{parametros.titulo}}</h1></a>
             </header>
 
             <p>Conteudo da minha postagem asdsas ad asd asd asd asdasd asd asd asd asd</p>
         </article>
-        
-         <article>
-            <header>
-             <a href ="#"><h1>Titulo da minha Postagem</h1></a>
-            </header>
-
-            <p>Conteudo da minha postagem asdsas ad asd asd asd asdasd asd asd asd asd</p>
-        </article>
-
-         <article>
-            <header>
-             <a href ="#"><h1>Titulo da minha Postagem</h1></a>
-            </header>
-
-            <p>Conteudo da minha postagem asdsas ad asd asd asd asdasd asd asd asd asd</p>
-        </article>
+        {% endfor %}
+    
     </section>

@@ -3,11 +3,10 @@ require_once "Core/Core.php";
 require_once "Controller/ErrorController.php";
 require_once "Controller/HomeController.php";
 require_once "Model/Conexao.php";
+require_once "Vendor/autoload.php";
 
-$con = Conexao::getInstance();
-var_dump($con);
 
-$template = file_get_contents('View/template.html'); // Variavel recebe todo o conteudo do html
+$template = file_get_contents('View/template.html'); // Função pega dados de um documento e joga na Variavel
 
 ob_start(); // Inicia um buffer
     $core = new Core(); // Instacia o objeto da classe Core

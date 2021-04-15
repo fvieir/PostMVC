@@ -1,0 +1,13 @@
+{
+    "name": "fabricio/postagem",
+    "description": "composer.json",
+    "authors": [
+        {
+            "name": "Fabricio Dourado",
+            "email": "65264206+fvieir@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.13"
+    }
+}
