@@ -1,13 +1,13 @@
 
     <section>
-        {% for parametros in post %}
+        {% for postagens in post %}
             <article>
             <header>
-                <a href ="#"><h1>{{parametros.titulo}}</h1></a>
+                <a href ="#"><h1>{{postagens.titulo}}</h1></a>
             </header>
 
-            <p>Conteudo da minha postagem asdsas ad asd asd asd asdasd asd asd asd asd</p>
+            <p>{{postagens.conteudo}}</p>
         </article>
-        {% endfor %}
-    
+      {% endfor %}  
+       
     </section>
