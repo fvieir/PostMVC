@@ -2,6 +2,7 @@
 
 require_once "Controller/HomeController.php";
 require_once "Controller/ErrorController.php";
+require_once "Controller/PostController.php";
 
 Class Core{
 
@@ -27,6 +28,10 @@ Class Core{
              } else { // senão existir variavel recebe o valor padrão
                  $metodo = 'index';
              }
+
+             if(count($url >= 1)){
+                $parametro = $url;
+             }
         } else { // se a Url vier vazia ou sem preenchimento e setado os valores padrões
             $controller = 'HomeController';
             $metodo = 'index';
@@ -39,6 +44,9 @@ Class Core{
 
             $controller = 'ErrorController';
         }
+
+        //var_dump($controller, $metodo, $parametro);
+        //exit;
 
          $objeto = new $controller;
          call_user_func_array(array($objeto, $metodo), array());    

@@ -1,8 +1,5 @@
 <?php
 
-require_once "Model/Conexao.php";
-require_once "Model/Postagem.php";
-
 Class HomeController
 {
     public function index()
@@ -27,17 +24,6 @@ Class HomeController
            echo"Erro -> ".$e->getMessage();
        }
 
-    }
-
-    public function cadastrar(){
-        
-        $loader = new \Twig\Loader\FilesystemLoader('View');
-        $twig = new \Twig\Environment($loader);
-        $template = $twig->load('cadastrar.html');
-
-        $parametro ['teste']= 'teste2';
-        $conteudo = $template->render($parametro);
-        print_r($conteudo);
     }
 }
 ?>
