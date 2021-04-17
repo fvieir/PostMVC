@@ -15,7 +15,10 @@ Class PostController{
             $parametro['titulo'] = $postagem->titulo;
             $parametro['conteudo'] =$postagem->conteudo;
 
-            $conteudo = $template->render($parametro);
+            $comentario = Postagem::listaComentarios();
+            var_dump($comentario);
+
+            $conteudo = $template->render($parametro,$comentario);
             print_r($conteudo);
     
 

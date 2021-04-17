@@ -44,6 +44,26 @@ class Postagem
        return $resultado;
         
     }
+
+    public static function listaComentarios(){
+
+        $dados = explode('/',filter_input(INPUT_GET,'pag',FILTER_SANITIZE_STRING));
+        $id = $dados[2];
+
+        $sql = "SELECT * FROM comentario WHERE id_postagem = :id";
+        $con = Conexao::getInstance()->prepare($sql);
+        $con->bindvalue('id',$id);
+        $con->execute();
+
+        $resultado = array();
+
+        while ($row = $con->fetchObject('Postagem')) {
+            $resultado[] = $row;
+        }
+        
+        return $resultado;
+
+    }
 }
 
 
