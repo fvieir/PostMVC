@@ -23,7 +23,8 @@ class Postagem
         }
     }
 
-    public static function selecionarId(){
+    public static function selecionarId()
+    {
 
         $dados = explode('/',filter_input(INPUT_GET,'pag',FILTER_SANITIZE_STRING));
         $id = $dados[2];
@@ -39,32 +40,21 @@ class Postagem
 
         if (empty($resultado)) {
             throw new Exception("Aconteceu algum erro");
-        }
-
-       return $resultado;
-        
+        } else {
+            $resultado->comentarios = Comentario::SelecionarComentarios($resultado->id);     
+        } 
+            
+        return $resultado;
     }
 
-    public static function listaComentarios(){
+    public static function insert($dados){
 
-        $dados = explode('/',filter_input(INPUT_GET,'pag',FILTER_SANITIZE_STRING));
-        $id = $dados[2];
-
-        $sql = "SELECT * FROM comentario WHERE id_postagem = :id";
-        $con = Conexao::getInstance()->prepare($sql);
-        $con->bindvalue('id',$id);
-        $con->execute();
-
-        $resultado = array();
-
-        while ($row = $con->fetchObject('Postagem')) {
-            $resultado[] = $row;
+        if (!isset($dados) && empty($dados)) {
+            
+            
         }
         
-        return $resultado;
-
     }
 }
-
 
 ?>

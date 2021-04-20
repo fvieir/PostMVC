@@ -3,9 +3,12 @@ require_once "Core/Core.php";
 
 require_once "Controller/ErrorController.php";
 require_once "Controller/HomeController.php";
+require_once "Controller/SobreController.php";
+require_once "Controller/AdminController.php";
 
 require_once "Model/Conexao.php";
 require_once "Model/Postagem.php";
+require_once "Model/Comentario.php";
 
 require_once "Vendor/autoload.php";
 

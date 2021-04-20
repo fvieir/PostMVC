@@ -5,5 +5,17 @@
                 <a href ="#"><h1>{{titulo}}</h1></a>
             </header>
         <p>{{conteudo}}</p>
+        
+        {% if comentarios == false %}
+        <hr><br>
+        <p> Ainda não há comentarios para este Post </p>   
+        <br> 
+        {% else %}
+            {% for comentario in comentarios %}
+            <hr><br>
+            <h3>{{comentario.nome}}</h3>
+            <p>{{comentario.mensagem}}</p>
+            {% endfor %}
+        {% endif %}   
         </article>
     </section>
