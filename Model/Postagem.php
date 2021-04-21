@@ -47,11 +47,33 @@ class Postagem
         return $resultado;
     }
 
-    public static function insert($dados){
+    public static function insert()
+    {
+        $acao = filter_input(INPUT_POST, 'cadastrar', FILTER_SANITIZE_STRING);
+        $titulo = filter_input(INPUT_POST, 'titulo', FILTER_SANITIZE_STRING);
+        $conteudo = filter_input(INPUT_POST, 'conteudo', FILTER_SANITIZE_STRING);
+        
+        // Verifica se clicou no botão Cadastrar, se não tiver clicado e chamado o else
+        if (!isset($acao)) 
+        {
+            throw new Exception("Pagina não encontrada");
+        } else {
+            //Verifica se esta passando Titulo e conteudo
+           if (!isset($titulo) OR !isset($conteudo) OR empty($titulo) OR empty($conteudo)) 
+           {
+            throw new Exception("Pagina não encontrada");
+           } else {
+                $sql= "INSERT INTO postagem (titulo,conteudo) VALUES (:titulo, :conteudo)";
+                $con = Conexao::getInstance()->prepare($sql);
+                $con->bindvalue('titulo',$titulo,PDO::PARAM_STR);
+                $con->bindvalue('conteudo',$conteudo,PDO::PARAM_STR);
+                $con->execute();
 
-        if (!isset($dados) && empty($dados)) {
-            
-            
+                if ($con->rowCount() == 1) 
+                {
+                   return true;
+                }
+           }
         }
         
     }

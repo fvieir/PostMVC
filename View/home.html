@@ -1,11 +1,10 @@
 
     <section>
         {% for postagens in post %}
-            <article>
+            <article class="forum-index-articles">
             <header>
-                <a href ="http://localhost/Postagem/Post/index/{{postagens.id}}"><h1>{{postagens.titulo}}</h1></a>
+                <a href ="http://localhost/Postagem/Post/index/{{postagens.id}}" class="forum-index-article-top"><h1>{{postagens.titulo}}</h1></a>
             </header>
-
             <p>{{postagens.conteudo}}</p>
         </article>
       {% endfor %}  
