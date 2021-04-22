@@ -1,9 +1,14 @@
 
 <h2>Controle de Postagem</h2>
-<br>
+<hr>
 <a href="http://localhost/postagem/admin/create"> <h3>Criar nova Postagem</h3></a>
 
-<table border="1" id="tabelaPost">
+{% if post == false %}
+<p>Ainda não há postagens</p>
+
+{%else%}
+
+<table id="tabelaPost">
     <tr id="Tbtitulo">
         <th>Id</th>
         <th>Titulo</th>
@@ -14,10 +19,11 @@
     <tr>
         <td>{{postagem.id}}</td>
         <td id="Tdprincipal">{{postagem.titulo}}</td>
-        <td><a href="http://localhost/postagem/admin/update/{{postagem.id}}">Alterar</a></td>
-        <td><a href="http://localhost/postagem/admin/delete/{{postagem.id}}">Deletar</a></td>
+        <td><a href="http://localhost/postagem/admin/changeId/{{postagem.id}}">Alterar</a></td>
+        <td><a href="http://localhost/postagem/admin/delete/{{postagem.id}}" onclick="return confirm('Deseja realmente deletar?')">Deletar</a></td>
     </tr>
     {% endfor %}
+    {% endif %}
 </table>
 <br>
 

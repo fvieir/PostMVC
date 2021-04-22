@@ -20,10 +20,12 @@ Class HomeController
             $conteudo = $template->render($parametro); 
             print_r($conteudo);
 
-       } catch (Exception $e) {
-           echo"Erro -> ".$e->getMessage();
+       } catch (Exception $e) { 
+         echo("<script>
+                    window.alert('Ainda não existe nenhuma Postagem, crie sua primeira post :-)')
+                    window.location.href='http://localhost/postagem/admin/create'
+               </script>");
        }
-
     }
 }
 ?>

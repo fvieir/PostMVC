@@ -19,7 +19,7 @@ class Postagem
         }
         return $resultado;
         } else {
-            throw new Exception("Ocorreu algum erro!");
+            throw new Exception("Houve alguma erro, entre em contato com Administrador");
         }
     }
 
@@ -77,6 +77,49 @@ class Postagem
         }
         
     }
+
+    public static function update ()
+    {
+
+        $titulo = filter_input(INPUT_POST, 'titulo', FILTER_SANITIZE_STRING);
+        $conteudo = filter_input(INPUT_POST, 'conteudo', FILTER_SANITIZE_STRING);
+        $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
+
+        $sql = "UPDATE postagem SET titulo = :titulo, conteudo = :conteudo WHERE id =:id";
+        $con = Conexao::getInstance()->prepare($sql);
+        $con->bindValue('titulo',$titulo,PDO::PARAM_STR);
+        $con->bindValue('conteudo',$conteudo,PDO::PARAM_STR);
+        $con->bindValue('id',$id,PDO::PARAM_INT);
+        $con->execute();
+
+        if($con->rowCount() == 1){
+            return true;
+        } else {
+            
+            throw new Exception("Erro ao atualizar");
+            return false;
+        }
+    }
+
+    public static function delete(){
+
+        $dados = explode('/',filter_input(INPUT_GET,'pag',FILTER_SANITIZE_STRING));
+        $id = $dados[2];
+
+        $sql = "DELETE FROM postagem WHERE id =:id";
+        $con = Conexao::getInstance()->prepare($sql);
+        $con->bindValue('id',$id,PDO::PARAM_INT);
+        $con->execute();
+
+        if ($con->rowCount() == 1
+        ) {
+            return true;
+        } else {
+            throw new Exception("Erro ao Deletar registro");
+            return false;
+        }
+    }
+
 }
 
 ?>

@@ -1,0 +1,130 @@
+*{margin: 5px 5px;}
+
+body{background-color:rgb(219, 82, 77);;}
+/*Inicio do Corpo*/
+#corpo{width: 1000px; 
+        margin: auto; 
+        /*border-left: 2px solid #ccc;
+        border-right: 2px solid #ccc;*/}
+
+#painel{
+    background: none rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+/*Inicio do Topo*/
+#topo {padding: 10px 10px;
+   /* border-bottom: 2px solid #ccc;*/} 
+
+#topo a{text-decoration: none;
+    font: 22px Arial; color: #333}
+
+#topo a input{
+    width: 180px;
+    height: 35px;
+    border: none;
+    margin: 0px;
+    padding: 0px 0px;
+    font: 18px Arial;
+    font-weight: bold;
+    background: none rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+    color:white;
+}
+
+#navParaDireita{float: right;}
+
+#topo a input:hover{
+    background: none rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+/*Inicio do Conteudo*/
+#conteudo{margin: 10px;}
+
+.caixa-texto{
+    width: 200px;
+    height: 25px;
+    border: none;
+    border-radius: 2px;
+}
+
+input:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.textarea{
+    border: 0 none;
+    border-radius: 5px;
+    outline: 0;
+}
+
+#conteudo article{margin-bottom: 10px;}
+
+#conteudo h1{font: 22px Arial; 
+    color:white;}
+
+#conteudo h2{ font: 18px Arial; 
+    color:white;}
+
+#conteudo h3{ font: 14px Arial; 
+    color:white;}
+
+#conteudo a{text-decoration: none;}
+
+#conteudo a:hover{text-decoration: underline; 
+    color: #333;}
+
+#conteudo p{margin: 20px; 
+    font: 14px Arial;}
+
+.titulo{
+    font-size: 20px;
+    color: white;
+    
+}
+
+
+/*Inicio do Tabela e Tags*/
+#tabelaPost {margin: 10px; 
+    margin-bottom: 10px; 
+    text-align: center; font-family: Arial; 
+    width: 800px; 
+    height: 150px;
+    background-color: white;
+    border: 1px solid black;
+    font: 100% sans-serif;
+    background-color: #efe;
+    /*border-collapse: collapse;*/
+    empty-cells: show;
+    border-bottom: .3em solid #4ca;
+}
+
+#tabelaPost th{font: 20px Arial bold; 
+    color: #333;}
+
+#Tdprincipal{width: 2000px;}
+
+/*Inicio dos Botoes */    
+.btn-atualizar{ background: none rgba(0, 0, 0, 0.15);
+    color:honeydew; border: initial;
+    width: 100px; 
+    height:30px;}
+
+.btn-atualizar:hover { background: none rgba(0, 0, 0, 0.5);
+    color: honeydew; 
+    border: initial; 
+    width: 100px; 
+    height:30px;}
+
+.btn-cancelar{background-color: #ff8c8c; 
+    color: honeydew; 
+    border: initial; 
+    width: 100px; 
+    height:30px;}
+
+.btn-cancelar:hover {background-color:#ff3333; 
+    color: honeydew; 
+    border: initial; 
+    width: 100px;
+    height:30px;}

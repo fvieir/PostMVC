@@ -43,6 +43,7 @@ Class Core{
         if (!file_exists($caminho) && !class_exists($controller)) {
 
             $controller = 'ErrorController';
+            $metodo ='index';
         }
 
         //var_dump($controller, $metodo, $parametro);

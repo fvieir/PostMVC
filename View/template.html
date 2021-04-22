@@ -4,47 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://localhost/postagem/Public/css/template.css">
     <title>Postagem</title>
 </head>
 <body >
-   <style>
-       *{margin: 0px 0px;}
-       body{background-color: cadetblue;}
-       #corpo{background-color:  #fff; width: 1000px; margin: auto; border-left: 2px solid #ccc; border-right: 2px solid #ccc;}
-            #topo{padding: 20px 20px;  border-bottom: 2px solid #ccc;} 
-            #topo a{text-decoration: none; font: 22px Arial; color: #333}
-            #navParaDireita{float: right;}
-            #topo a:hover{text-decoration: underline;}
-
-            #conteudo{margin: 20px;}
-                #conteudo article{margin-bottom: 20px;}
-                #conteudo h1{font: 22px Arial; color: #333;}
-                #conteudo h2{ font: 18px Arial; color:cadetblue}
-                #conteudo h3{ font: 14px Arial; color:#333}
-                #conteudo a{text-decoration: none;}
-                #conteudo a:hover{text-decoration: underline; color: #333;}
-                #conteudo p{margin: 20px; font: 14px Arial;}
-                #tabelaPost {margin: 10px; margin-bottom: 10px; text-align: center; font-family: Arial; border: 2px solid #ccc; width: 800px; height: 100px;}
-                #tabelaPost th{font: 20px Arial bold; color: #333;}
-                #Tdprincipal{width: 2000px;}
-                .forum-index-articles{margin:30px 0;background-color:#fff;border:1px solid #ddd;padding:15px}
-                .forum-index-article-top{display:flex;flex-direction:column;align-items:normal;text-align:center}
-                .forum-index-article-top img{width:50px}@media (min-width:48em){.forum-index-article-top{display:flex;flex-direction:row;align-items:center;justify-content:space-between;padding-bottom:0;text-align:left}
-                .forum-index-article-top img{margin-right:15px}.forum-index-articles{padding:0 15px 15px}}
-    
-   </style>
+   
    <div id="corpo">
-        <div id="topo">
-            <header>
-                <nav>
-                    <a href="http://localhost/postagem/Home"> Home </a>  |
-                    <a href="http://localhost/postagem/Sobre"> Sobre </a>
-                    <a id="navParaDireita" href="http://localhost/postagem/admin"> Admin </a>
-                </nav>
-            </header>
-        </div>
-        <div id=conteudo>
-            {{conteudo dinamico}}
+        <div id="painel">
+            <div id="topo">
+                <header>
+                    <nav>
+                        <a href="http://localhost/postagem/Home"><input type="button" value="Home"> </a>  |
+                        <a href="http://localhost/postagem/Sobre"> <input type="button" value="Sobre"> </a>
+                        <a id="navParaDireita" href="http://localhost/postagem/admin"> <input type="button" value="Admin"> </a>
+                    </nav>
+                </header>
+            </div>
+            <div id=conteudo>
+                {{conteudo dinamico}}
+            </div>
         </div>
    </div>
 </body>

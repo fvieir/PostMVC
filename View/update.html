@@ -1,0 +1,17 @@
+  <h1>Alterar Postagem</h1>
+  <hr><br>
+  <form method="POST" action="http://localhost/postagem/admin/update">
+      
+    <span  class="titulo" for="id"> Código </span><br>
+    <input class ="caixa-texto" type="text" value = "{{id}}" readonly="true" name="id" style="background-color: silver; width: 20px; border-radius: 4px;"><br><br>
+
+    <span class="titulo" for="titulo"> Titulo </span><br>
+    <input class ="caixa-texto" type="text" value = "{{titulo}}" name="titulo"><br><br>
+
+    <span class="titulo" for="conteudo">Conteudo</span><br>
+    <textarea class ="textarea" name ="conteudo" type="text" cols="100" rows="10">{{conteudo}}</textarea><br><br>
+
+    <input class = "btn-atualizar" type="submit" name="cadastrar" value="Atualizar">
+    <a href="http://localhost/postagem/admin"> <input class = "btn-cancelar" type="button" value="Canelar"></a>
+  </form>
+  <br>
