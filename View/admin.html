@@ -8,18 +8,18 @@
 
 {%else%}
 
-<table id="tabelaPost">
-    <tr id="Tbtitulo">
+<table id="table" border="1">
+    <tr style="height: 30px; font-size: 20px">
         <th>Id</th>
         <th>Titulo</th>
         <th>Alterar</th>
         <th>Deletar</th>
     </tr>
     {% for postagem in post %}
-    <tr>
+    <tr style="height: 25px;">
         <td>{{postagem.id}}</td>
         <td id="Tdprincipal">{{postagem.titulo}}</td>
-        <td><a href="http://localhost/postagem/admin/changeId/{{postagem.id}}">Alterar</a></td>
+        <td ><a href="http://localhost/postagem/admin/changeId/{{postagem.id}}">Alterar</a></td>
         <td><a href="http://localhost/postagem/admin/delete/{{postagem.id}}" onclick="return confirm('Deseja realmente deletar?')">Deletar</a></td>
     </tr>
     {% endfor %}
