@@ -17,6 +17,7 @@ Class PostController{
 
             $parametro = array();
 
+            $parametro['id'] = $postagem->id;
             $parametro['titulo']   = $postagem->titulo;
             $parametro['conteudo'] = $postagem->conteudo;
             $parametro['comentarios'] = $postagem->comentarios;
@@ -29,6 +30,21 @@ Class PostController{
         }
 
     }
+
+    public function addComentario(){
+        
+        try {
+            $postagem = Postagem::addComentario($_POST);
+
+            var_dump($postagem);
+            
+        } catch (Exception $e) {
+            echo("<script>
+                window.alert('".$e->getMessage()."')
+                window.location.href='http://localhost/Postagem/Post/index'
+            </script>");
+        }
+    }    
 }
 
 

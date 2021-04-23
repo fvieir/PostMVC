@@ -1,11 +1,12 @@
 
-    <section class="painel-secao">
+    <section >
         {% for postagens in post %}
-            <article class="forum-index-articles">
+            <article class="painel-secao">
             <header>
                 <a href ="http://localhost/Postagem/Post/index/{{postagens.id}}" class="forum-index-article-top"><h1>{{postagens.titulo}}</h1></a>
             </header>
-            <p>{{postagens.conteudo}}</p>
+            <hr>
+                <p class="limitar">{{postagens.conteudo}}</p>
         </article>
       {% endfor %}  
        

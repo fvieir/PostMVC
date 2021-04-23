@@ -120,6 +120,32 @@ class Postagem
         }
     }
 
+    public static function addComentario(){
+
+        $dados = explode('/',filter_input(INPUT_GET,'pag',FILTER_SANITIZE_STRING));
+        $id = $dados[2];
+
+        $comentario = filter_input(INPUT_POST, 'comentario',FILTER_SANITIZE_STRING);
+
+        if (!isset($comentario) OR empty($comentario)) {
+            throw new Exception("Não é possível fazer comentario vazio!");
+        } 
+
+        $sql = "UPDATE comentario SET mensagem = :mensagem WHERE id_postagem = :id";
+        $con = Conexao::getInstance()->prepare($sql);
+        $con->bindValue('id',$id,PDO::PARAM_STR);
+        $con->execute();
+
+        if ($con->rowCount() == 1) {
+            return true;
+        } else {
+            throw new Exception("Erro ao cadastrar comentario");
+            
+            $id = $con->fetchObject('Postagem');
+            return $id;
+        }
+    }
+
 }
 
 ?>

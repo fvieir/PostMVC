@@ -99,7 +99,7 @@ Class AdminController
             </script>");
         } catch (Exception $e) {
             echo("<script>
-                ndow.alert('".$e->getMessage()."')
+                window.alert('".$e->getMessage()."')
                 window.location.href='http://localhost/postagem/admin/'
             </script>");
         }

@@ -1,15 +1,17 @@
-
-<h2>Controle de Postagem</h2>
-<hr>
-<a href="http://localhost/postagem/admin/create"> <h3>Criar nova Postagem</h3></a>
-
+<div class="h2-principal">
+    <h2>Controle de Postagem</h2>
+</div>
+<br>
+<div class="h3-principal">
+    <a href="http://localhost/postagem/admin/create" style="text-decoration: none;"> <h3 style="font-size: 18px;">Criar nova Postagem + </h3></a>
+</div><br>
 {% if post == false %}
 <p>Ainda não há postagens</p>
 
 {%else%}
 
 <table id="table" border="1">
-    <tr style="height: 30px; font-size: 20px">
+    <tr style="height: 30px; font-size: 20px;  background: none rgba(0, 0, 0, 0.15);">
         <th>Id</th>
         <th>Titulo</th>
         <th>Alterar</th>
@@ -19,8 +21,8 @@
     <tr style="height: 25px;">
         <td>{{postagem.id}}</td>
         <td id="Tdprincipal">{{postagem.titulo}}</td>
-        <td ><a href="http://localhost/postagem/admin/changeId/{{postagem.id}}">Alterar</a></td>
-        <td><a href="http://localhost/postagem/admin/delete/{{postagem.id}}" onclick="return confirm('Deseja realmente deletar?')">Deletar</a></td>
+        <td ><a href="http://localhost/postagem/admin/changeId/{{postagem.id}}" > <img src="http://localhost/postagem/Public/icones/editar.ico" alt="Sim" width="40" height="20"></a></td>
+        <td><a href="http://localhost/postagem/admin/delete/{{postagem.id}}" onclick="return confirm('Deseja realmente deletar?')"><img src="http://localhost/postagem/Public/icones/delete.ico" alt="Sim" width="40" height="25"></a></td>
     </tr>
     {% endfor %}
     {% endif %}

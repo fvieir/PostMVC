@@ -1,6 +1,7 @@
 
     <section>
-        <article>
+        <article class="painel-post">
+            <input type="text" name="id" readonly="true" value="{{id}}"  style="background-color: silver; width: 20px; border-radius: 4px;">
             <header>
                 <a href ="#"><h1>{{titulo}}</h1></a>
             </header>
@@ -17,5 +18,9 @@
             <p>{{comentario.mensagem}}</p>
             {% endfor %}
         {% endif %}   
+        <form method="POST" action="http://localhost/postagem/Post/addComentario/{{id}}">
+            <textarea class="textarea" name ="comentario" type="text" cols="50" rows="10" placeholder="adione um comentario..."></textarea><br>
+            <input class="btn-atualizar" type="submit" name="cadastrar" value="Comentar">
+        </form>
         </article>
     </section>
