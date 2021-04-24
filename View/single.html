@@ -7,6 +7,14 @@
             </header>
         <p>{{conteudo}}</p>
         
+        <form method="POST" action="http://localhost/postagem/post/addComentario/{{id}}">
+            <span for="nome">Nome</span><br>
+            <input type="text" name="nome"><br><br>
+
+            <textarea class="textarea" name ="comentario" type="text" cols="100" rows="2" placeholder="adione um comentario..."></textarea><br>
+            <input class="btn-atualizar" type="submit" name="cadastrar" value="Comentar">
+        </form>
+
         {% if comentarios == false %}
         <hr><br>
         <p> Ainda não há comentarios para este Post </p>   
@@ -14,13 +22,12 @@
         {% else %}
             {% for comentario in comentarios %}
             <hr><br>
-            <h3>{{comentario.nome}}</h3>
-            <p>{{comentario.mensagem}}</p>
+            <div>
+                <a href="http://localhost/postagem/post/apagarComent/{{id}}-coment-{{comentario.id_coment}}"><img src="http://localhost/postagem/Public/icones/delete.ico" style="float: right;" alt="Sim" width="40" height="25"></a>
+                <h3>{{comentario.nome}}</h3>
+                <p>{{comentario.mensagem}}</p>
+            </div>
             {% endfor %}
         {% endif %}   
-        <form method="POST" action="http://localhost/postagem/Post/addComentario/{{id}}">
-            <textarea class="textarea" name ="comentario" type="text" cols="50" rows="10" placeholder="adione um comentario..."></textarea><br>
-            <input class="btn-atualizar" type="submit" name="cadastrar" value="Comentar">
-        </form>
         </article>
     </section>

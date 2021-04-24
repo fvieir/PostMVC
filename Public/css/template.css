@@ -121,6 +121,10 @@ body{background-color:rgb(219, 82, 77);}
 /*Inicio do Conteudo*/
 #conteudo{margin: 10px;}
 
+#table img{
+    text-align: center;
+}
+
 .caixa-texto{
     width: 200px;
     height: 25px;
