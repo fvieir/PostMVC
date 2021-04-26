@@ -105,5 +105,10 @@ Class AdminController
         }
     }
 
+    public function listarfromDataTables(){
+        
+        Postagem::listarfromDataTables();
+
+    }
 }   
 ?>

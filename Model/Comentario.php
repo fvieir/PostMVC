@@ -6,7 +6,7 @@ class Comentario
     {
         $id = $id_post;
 
-        $sql = "SELECT * FROM comentario WHERE id_postagem = :id ORDER BY id_postagem ASC";
+        $sql = "SELECT * FROM comentario WHERE id_postagem = :id ORDER BY id_coment DESC";
         $con = Conexao::getInstance()->prepare($sql);
         $con->bindvalue('id',$id);
         $con->execute();
@@ -16,6 +16,11 @@ class Comentario
         while ($row = $con->fetchObject('Postagem')) {
             $resultado[]= $row;
         }
+
+       /* echo"<pre>";
+        var_dump($resultado);
+        echo"</pre>";
+        exit;*/
         return $resultado;
 
     }

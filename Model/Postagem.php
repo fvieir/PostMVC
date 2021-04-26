@@ -120,6 +120,51 @@ class Postagem
         }
     }
 
+    public static function listarfromDataTables(){
+        //Receber a requisão da pesquisa 
+        $requestData= $_REQUEST;
+
+        //Indice da coluna na tabela visualizar resultado => nome da coluna no banco de dados
+        $columns = array(
+            '0' => 'id',
+            '1' => 'titulo'
+        );
+
+        //Obtendo registros de número total sem qualquer pesquisa
+        $sql = "SELECT id, titulo FROM postagem";
+        $con = Conexao::getInstance()->prepare($sql);
+        $con->execute();
+        $qtd_linhas = $con->rowCount();
+
+        //Obter os dados a serem apresentados
+        $sql_2 = "SELECT id, titulo FROM postagem WHERE 1=1";
+        $con2= Conexao::getInstance()->prepare($sql_2);
+        $result_post = $con2->execute();
+        $totalfilter = $con2->rowCount();
+
+        //Ordenar o resultado
+        $sql_2.=" ORDER BY ". $columns[$requestData['order'][0]['column']]."   ".$requestData['order'][0]['dir']."  LIMIT ".$requestData['start']." ,".$requestData['length']."   ";
+        $con3= Conexao::getInstance()->prepare($sql_2);
+        $result_post= $con3->execute();
+        
+        // Ler e criar o array de dados
+        $dados = array();
+        while ($row = $con2->fetchall()) {
+            $dado = array();
+            $dado[] = $row[0];
+            $dado[] = $row[1];
+            $dados[] = $dado;
+        }
+        
+        $json_data = array(
+            "draw" => intval($requestData['draw']),
+            "recordsTotal" => intval($qtd_linhas),
+            "recordsFiltered" =>intval($totalfilter),
+            "data" => $dados
+       );
+
+       echo json_encode($json_data);
+    }
 }
 
 ?>
