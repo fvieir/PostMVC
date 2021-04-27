@@ -66,24 +66,24 @@ body{background-color:rgb(219, 82, 77);}
     border-radius: 5px;
 }
 
-#table {
+/*.table {
     border-collapse: collapse;
     width: 900px;
     color: white; 
     text-decoration: none; 
     padding:12px 20px;
     background: none rgba(0, 0, 0, 0.15);
-}
+}*/
 
-#table tr:hover{
+/*.table tr:hover{
     background: none rgba(0, 0, 0, 0.40);
-}
+}*/
 
 
 
-#table a {
+/*#table a {
     color: azure;
-}
+}*/
 
 
 /*.h2-principal{

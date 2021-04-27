@@ -1,15 +1,15 @@
-<script type="text/javascript">
+<!--<script type="text/javascript">
     $(document).ready(function() {
         $('#table').DataTable( {
         "processing": true,
         "serverSide": true,
          "ajax": {
-                    "url": "http://localhost/postagem/Admin/listarfromDataTables",
+                    "url": "http://localhost/postagem/admin/listarfromDataTables",
                     "type": "POST"
                 }
             });
         });
-</script>
+</script>-->
 
 <div class="h2-principal">
     <h2>Controle de Postagem</h2>
@@ -23,25 +23,36 @@
 
 {%else%}
 
-<table id="table" class="display" style="width:100%">
-    <thead>
-        <tr style="height: 30px; font-size: 20px;  background: none rgba(0, 0, 0, 0.15);">
+<table id="userTable" class="compact hover stripe">
+    <thead style="height: 30px; font-size: 20px;  background: none rgba(0, 0, 0, 0.15);">
             <th>Id</th>
             <th>Titulo</th>
             <th>Alterar</th>
             <th>Deletar</th>
-        </tr>
     </thead>   
-   <!-- {% for postagem in post %}
-    <tr style="height: 25px;">
-        <td>{{postagem.id}}</td>
-        <td id="Tdprincipal">{{postagem.titulo}}</td>
-        <td ><a href="http://localhost/postagem/admin/changeId/{{postagem.id}}" > <img src="http://localhost/postagem/Public/icones/editar.ico" alt="Sim" width="40" height="20"></a></td>
-        <td><a href="http://localhost/postagem/admin/delete/{{postagem.id}}" onclick="return confirm('Deseja realmente deletar?')"><img src="http://localhost/postagem/Public/icones/delete.ico" alt="Sim" width="40" height="25"></a></td>
-    </tr>
-    {% endfor %}-->
-    {% endif %}
+    <tbody>   
+        {% for postagem in post %}
+     
+        <tr style="height: 18px;">
+            <td>{{postagem.id}}</td>
+            <td id="Tdprincipal">{{postagem.titulo}}</td>
+            <td ><a href="http://localhost/postagem/admin/changeId/{{postagem.id}}" > <img src="http://localhost/postagem/Public/icones/editar.ico" alt="Sim" width="40" height="20"></a></td>
+            <td><a href="http://localhost/postagem/admin/delete/{{postagem.id}}" onclick="return confirm('Deseja realmente deletar?')"><img src="http://localhost/postagem/Public/icones/delete.ico" alt="Sim" width="40" height="25"></a></td>
+        </tr>
+  
+        {% endfor %}
+    </tbody>
+{% endif %}
 </table>
 <br>
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#userTable').DataTable({
+             "order": [[2, "asc"]]
+        });
+    });
+</script>
 

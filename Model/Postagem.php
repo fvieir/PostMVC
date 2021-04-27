@@ -126,8 +126,8 @@ class Postagem
 
         //Indice da coluna na tabela visualizar resultado => nome da coluna no banco de dados
         $columns = array(
-            '0' => 'id',
-            '1' => 'titulo'
+            0 => 'id',
+            1 => 'titulo'
         );
 
         //Obtendo registros de número total sem qualquer pesquisa
