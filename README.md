@@ -42,7 +42,13 @@ Sistema de Postagem com MVC em php com plugin Data Table e biblioteca Twig
 <a name="autor" id="autor">Autor</a>
 <p>Fabrício Vieira , linkendln:https://www.linkedin.com/in/fabr%C3%ADcio-dourado-vieira/ </p>
 
-<a name="instalacao" id="autor">Instalação</a>
-<p> </p>
+### 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [PHP](https://www.php.net/downloads.php)
+- [Twig](https://twig.symfony.com/)
+- [Data Tables](https://datatables.net/)
+- [Composer](https://getcomposer.org/download/)
 
 
